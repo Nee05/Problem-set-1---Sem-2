@@ -57,12 +57,12 @@
  \usepackage[justification=centering]{caption}
  \setcounter{secnumdepth}{0}
 \title{Problem set 1 - Sem 2}
-\author{ Giacomo LoConte, Kun Wu, Francesca Eustacchi and Neeharika Kakunuri }
+\author{ Giacomo Lo Conte, Kun Wu, Francesca Eustacchi and Neeharika Kakunuri }
 
 \begin{document}
 \maketitle
 \section{ 1 Theory I: DAGs and Potential Outcomes}
-a) Consider the following threshold model with a binary treatment $D$, an additional (binary) covariate $x$, the outcome $y$ and an i.i.d error term with mean zero $\epsilon_i$
+\textbf{a) Consider the following threshold model with a binary treatment $D$, an additional (binary) covariate} $x$\textbf{, the outcome} $y$ \textbf{and an i.i.d error term with mean zero} $\epsilon_i$
 \begin{equation}
     y_i = \alpha + \beta D_i + \gamma x_i + \rho \epsilon_i
 \end{equation}
@@ -70,13 +70,13 @@ a) Consider the following threshold model with a binary treatment $D$, an additi
      x_i = 1(\kappa + \delta D_i + \phi \epsilon_i > c) 
 \end{equation}\label{eqn 2}
   
-The second part of equation \ref{eqn 2} means that $x_i = 1$ if teh sum on the right hand side is greater than a threshold c and $x_i = 0$ otherwise. Assuming that $\delta = 0$, show that the estimator of the average treatment effect (ATE), $\Delta$ = $E(y|D = 1 ,x = X) - E(y|D = 0 ,x = X)$ equals  $\beta$ + bias, characterise the bias (i.e. derive the exact forumla)  and explain what the bias means.\\
+\textbf{The second part of equation \ref{eqn 2} means that} $x_i = 1$ \textbf{if the sum on the right hand side is greater than a threshold c and $x_i = 0$ otherwise. Assuming that} $\delta = 0$\textbf{, show that the estimator of the average treatment effect (ATE), }$\Delta=E(y|D = 1 ,x = X) - E(y|D = 0 ,x = X)$ \textbf{equals}  $\beta$ + \textit{bias}\textbf{, characterise the bias (i.e. derive the exact formula)  and explain what the bias means.}\\
 
-b) Now assume that $\delta \neq 0$. Write down a DAG that represents the model. Should the researcher account for $x$ to deconfound the treatment effect?\\
+\textbf{b) Now assume that }$\delta \neq 0$\textbf{. Write down a DAG that represents the model. Should the researcher account for }$x$ \textbf{to deconfound the treatment effect?}\\
 
-c) Now assume that $\delta = 0$ and $\gamma ≠ 0$ Using the potential outcomes framework, show that the bias $E(y|D = 1,x = X) − E(y|D = 0,x = X) − \beta$ can be re-written as a weighted average of $E(\epsilon|D=1,x=X)−E(\epsilon|D=0,x=X$)acros sgroup swith $x=1$and$x=0$. Provide a brief interpretation of the bias term.\\
+\textbf{c) Now assume that }$\delta \not= 0$ \textbf{and} $\gamma = 0$\textbf{. Using the potential outcomes framework, show that the bias} $E(y|D = 1,x = X) − E(y|D = 0,x = X) - \beta$ \textbf{can be re-written as a weighted average of} $E(\epsilon|D=1,x=X)-E(\epsilon|D=0,x=X)$ \textbf{across group switch }$x=1$ \textbf{and} $x=0$\textbf{. Provide a brief interpretation of the bias term.}\\
 
-d) Suppose $\beta > 0$. Derive conditions under which the inclusion of $x$ would lead to the underestimation of $\beta$, i.e. $E(\hat\beta) < \beta$
+\textbf{d) Suppose }$\beta > 0$\textbf{. Derive conditions under which the inclusion of $x$ would lead to the underestimation of} $\beta$\textbf{, i.e.} $E(\hat\beta) < \beta$
 
 \newpage
 \section{2 Theory and Simulation}
@@ -102,4 +102,6 @@ a) While this identification strategy appears plausible at first, the choice of 
 b) Using potential outcomes notation, derive the bias in the estimation of the ATE that results from the bad control problem found in a). Explain in what direction the bias could likely go.\\
 c) Propose tests that could potentially show that the bias is quantitatively unimportant (after all, no identification strategy is perfect; so showing that a bias does not matter is often what is needed). Please be brief here.\\
 
+
+okay so its done
 \end{document}
