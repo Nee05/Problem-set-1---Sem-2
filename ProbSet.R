@@ -1,3 +1,6 @@
+rm(list=ls())
+library(stargazer)
+
 #Dummy female
 set.seed(5)
 Female<-ifelse(rnorm(1000)>0, 1, 0)
@@ -13,6 +16,7 @@ sum(Discrimination)
 #Variable Ability
 set.seed(7)
 Ability<-rnorm(length(Female), 16, 4)
+summary(Ability)
 
 #Dummy occupation
 c<-3
@@ -32,9 +36,9 @@ set.seed(9)
 Earnings<-g+h*Ability+i*Discrimination+k*Occupation+rnorm(length(Female), 16, 4)
 summary(Earnings)
 
-summary(lm(Earnings~Discrimination))
-summary(lm(Earnings~Discrimination+Occupation))
-summary(lm(Earnings~Discrimination+Occupation+Ability))
-summary(lm(Earnings~Discrimination+Ability))
-summary(lm(Earnings~Occupation+Ability))
+stargazer(lm(Earnings~Discrimination), type="text")
+stargazer(lm(Earnings~Discrimination+Occupation), type="text")
+stargazer(lm(Earnings~Discrimination+Occupation+Ability), type="text")
+stargazer(lm(Earnings~Discrimination+Ability), type="text")
+stargazer(lm(Earnings~Occupation+Ability), type="text")
 
