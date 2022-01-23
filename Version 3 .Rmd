@@ -1,0 +1,57 @@
+---
+title: "Markdown - Problem Set 1"
+output: pdf_document
+---
+
+```{r}
+rm(list=ls())
+library(stargazer)
+
+#Creating a dummy for female
+set.seed(5)
+Female<-ifelse(rnorm(1000)>0, 1, 0)
+sum(Female)
+
+#Creating a dummy for dscirmination
+a<-0.5
+b<-2
+set.seed(3)
+Discrimination<-ifelse(a+b*Female+rnorm(length(Female), 1, 2)>2.8, 1, 0)
+sum(Discrimination)
+
+#Creating a variable called Ability
+set.seed(7)
+Ability<-rnorm(length(Female), 16, 4)
+summary(Ability)
+
+#Creating a dummy for occupation
+c<-3
+d<--1.2
+e<-2.1
+f<-0.25
+set.seed(8)
+Occupation<-ifelse(c+d*Discrimination+e*Female+f*Ability+rnorm(length(Female), 1, 2)>7, 1, 0)
+sum(Occupation)
+
+#setting parameters g , h , i and k to compare the estimates from the below regressions
+g<-23.5
+h<-5.8
+i<--3.03
+k<-12.8
+set.seed(9)
+Earnings<-g+h*Ability+i*Discrimination+k*Occupation+rnorm(length(Female), 16, 4)
+summary(Earnings)
+
+#regression for D on Y
+stargazer(lm(Earnings~Discrimination), type="text")
+#regression  for Y on D controlling with O
+stargazer(lm(Earnings~Discrimination+Occupation), type="text")
+#regression  for Y on D controlling with O + A
+#Additional regressions
+stargazer(lm(Earnings~Discrimination+Occupation+Ability), type="text")
+#regression  for Y on D controlling with A
+stargazer(lm(Earnings~Discrimination+Ability), type="text")
+#regression  for Y on O controlling with A
+stargazer(lm(Earnings~Occupation+Ability), type="text")
+```
+
